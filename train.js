@@ -26,7 +26,8 @@ $(document).ready(function() {
       var frequencyCol = $("<td>").attr("class", "train-frequency");
       var firstTrain = moment(trainInfo.trainFirst, "HH:mm").subtract(
         1,
-        "months"
+        "months",
+        console.log("FIRST TRAIN", firstTrain)
       );
 
       $(nameCol).html(trainInfo.trainName);
