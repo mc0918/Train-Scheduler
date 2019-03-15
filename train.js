@@ -33,9 +33,11 @@ $(document).ready(function() {
       $(destinationCol).html(trainInfo.trainDestination);
       $(frequencyCol).html(trainInfo.trainFrequency);
 
+      //=================================SOMETHING IS FUNKY WITH THE TIMES=========================================
       var now = moment();
       console.log(now);
       var difference = moment().diff(moment(firstTrain), "minutes");
+      console.log("Difference: ", difference);
       var remainder = difference % trainInfo.trainFrequency;
       console.log(remainder);
       var minutes = trainInfo.trainFrequency - remainder;
@@ -48,6 +50,7 @@ $(document).ready(function() {
       console.log("NEW TIME FORMAT!!", newTrainFormat);
       var newTrainCol = $("<td>").attr("class", "train-next");
       newTrainCol.html(newTrainFormat);
+      //=================================SOMETHING IS FUNKY WITH THE TIMES=========================================
 
       newRow.append(
         nameCol,
@@ -72,6 +75,7 @@ $(document).ready(function() {
     var trainDestination = $("#inputDestination").val();
     var trainFrequency = $("#inputFrequency").val();
     var trainFirst = $("#inputFirstRun").val();
+    console.log("FIRST RUN: ", trainFirst);
 
     console.log("ONCLICK TRAIN FREQUENCY!", trainFrequency);
 
